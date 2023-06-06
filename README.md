@@ -17,6 +17,7 @@ Engineers House, The Promenade, Clifton Down, Clifton, Avon, Bristol BS8 3NB
 
 ## Agenda 
 
+| slot | event |
 | 09:00-09:30 | Arrive, tea/coffee, set-up |
 | 09:30-10:45 | Under the surface: the hidden me – part 1 (see below) |
 | 10:45-11:00 | Tea/coffee break |
@@ -41,6 +42,7 @@ The purpose of these presentations is to help others to get to know you a little
 
 Organisers: Yi Liu, Andrew Elmore, Hayley Wragg 
 
+| slot | action |
 | 13:00-13:30 | Assign Groups & Group Changes |
 | 13:30-14:00 | Group planning |
 | 14:00-15:30 | Group Work |

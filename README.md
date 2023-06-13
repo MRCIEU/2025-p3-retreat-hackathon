@@ -128,6 +128,8 @@ Suggested by: Andrew
 
 Let’s stop reinvesting the wheel: Create shared, reusable code and steps 
 
+Here is a github repo that is able to run pipeline steps: https://github.com/andrew-e/genepi-pipeline
+
 Task ideas: 
 
 - Identify common problems we have independently have to solve 

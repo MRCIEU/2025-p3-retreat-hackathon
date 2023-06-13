@@ -21,7 +21,7 @@ def main():
         people = [_ for _ in f.read().strip().split("\n") if not _.startswith("#")]
     print(f"Number of people today {len(people)}")
 
-    nominators = project_df["nominator"].drop_duplicates().tolist()
+    nominators = project_df["nominator"].drop_duplicates().sample(frac=1).tolist()
     people1 = (
         py_.chain(people)
         .filter(lambda e: e not in nominators)

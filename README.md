@@ -73,6 +73,8 @@ Suggested by: Yi
 
 Data source https://huggingface.co/datasets/Gaborandi/breast_cancer_pubmed_abstracts 
 
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/breast-cancer-literature-data?csf=1&web=1&e=Kqoaq4
+
 Task guideline (you don’t need to follow): 
 
 - Some exploratory data analysis 
@@ -84,6 +86,8 @@ Suggested by: Yi
 
 Data source: https://huggingface.co/datasets/Kira-Asimov/gender_clinical_trial/viewer/Kira-Asimov--gender_clinical_trial/train?p=0 
 
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/clinical-trial-literature-data?csf=1&web=1&e=x9afBN
+
 Task guideline (you don’t need to follow): 
 
 - Some exploratory data analysis 
@@ -94,6 +98,7 @@ Task guideline (you don’t need to follow):
 Suggested by: Yi 
 
 Data source: https://www.kaggle.com/datasets/ananthu19/alzheimer-disease-and-healthy-aging-data-in-us?resource=download 
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/alzheimer-disease-and-healthy-aging-data?csf=1&web=1&e=Ob32j9
 
 Task guideline (you don’t need to follow): 
 
@@ -105,6 +110,8 @@ Task guideline (you don’t need to follow):
 Suggested by: Yi 
 
 Data source: https://www.kaggle.com/datasets/alexteboul/diabetes-health-indicators-dataset 
+
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/diabetes-data?csf=1&web=1&e=W7npm1
 
 Task guideline (you don’t need to follow): 
 
@@ -144,3 +151,9 @@ Task ideas:
     - Put those steps into a pipeline (snakemake) with common inputs and outputs 
     - Document common pipeline steps, along with gotchas and pitfalls 
     - Output results automatically into a digestible document to look at 
+
+### 7. Personal Key Indicators of Heart Disease
+
+Suggested by: Si
+
+Si to add further details

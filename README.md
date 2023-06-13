@@ -157,3 +157,14 @@ Task ideas:
 Suggested by: Si
 
 Si to add further details
+
+### 8. Analysis of Air Quality data in Bristol
+
+Data source: https://www.kaggle.com/datasets/visalakshiiyer/air-quality-uk-bristol
+
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/bristol-air-quality-data?csf=1&web=1&e=SAS18d
+
+Task guideline (you don’t need to follow): 
+
+- Some exploratory data analysis 
+- Some stories to tell from the data 

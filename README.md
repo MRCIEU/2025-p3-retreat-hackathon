@@ -46,14 +46,16 @@ Organisers: Yi Liu, Andrew Elmore, Hayley Wragg
 | slot | action |
 | --- | --- |
 | 13:00-13:30 | Assign Groups & Group Changes |
-| 13:30-14:00 | Group planning |
+| 13:30-14:00 | Group planning: which project and how to divide labour |
 | 14:00-15:30 | Group Work |
 | 15:30-16:00 | Finalise/ Combine ideas |
 | 16:00-17:00 | Presentations |
 
 ## Group projects 
 
-At 13:00 we will randomly allocate all attendees (including the organisers and Tom) to 4 groups with roughly equal sizes, where each group will be presented with a project randomly picked from the project pool (see below). This random allocation will be done via a script in the github repo. After the allocation, members in a group can choose to switch places with people in other groups, as long as there is a sensible switch available.  
+At 13:00 we will randomly allocate all attendees (including the organisers and Tom) to 4 groups with roughly equal sizes, where each group will be presented with **two** projects randomly picked from the project pool (see below). 
+This random allocation will be done via a script in the github repo. After the allocation, members in a group can choose to switch places with people in other groups, as long as there is a sensible switch available.  
+As a group you can then collectively decide which of the **two** projects you would like to proceed with.
 
 We expect people to self-organise during the group work, in terms of the direction and division of labour.  If there is a dataset associated with a project, the dataset as well as sufficient documentation will be placed under a folder in the DMER group sharepoint site (https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials?csf=1&web=1&e=gBVKHX). The organiser who suggested a specific project will be happy to offer further clarification and explanation on the project. 
 

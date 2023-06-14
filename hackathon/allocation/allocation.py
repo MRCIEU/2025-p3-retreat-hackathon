@@ -1,10 +1,11 @@
 from pathlib import Path
-from pprint import pprint
+from pprint import pprint, pformat
 from pydash import py_
 import pandas as pd
 
 PATH_PROJECTS = Path(".") / "projects.csv"
 PATH_ATTENDEES = Path(".") / "attendees.txt"
+PATH_OUTPUT = Path(".") / ".." / "allocation_results.txt"
 NUM_GROUPS = 4
 
 
@@ -69,6 +70,10 @@ def main():
         }
         allocation.append(group)
     pprint(allocation)
+
+    output_res = pformat(allocation)
+    with PATH_OUTPUT.open("w") as f:
+        f.write(output_res)
 
     print("Done allocation")
 

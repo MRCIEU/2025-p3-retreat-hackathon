@@ -20,7 +20,7 @@ def main():
     project_df = project_df.reset_index(drop=False)
     with PATH_ATTENDEES.open() as f:
         people = [_ for _ in f.read().strip().split("\n") if not _.startswith("#")]
-    print(f"Number of people today {len(people)}")
+    print(f"\nNumber of people today for hackathon {len(people)}\n")
 
     nominators = project_df["nominator"].drop_duplicates().sample(frac=1).tolist()
     people1 = (
@@ -72,6 +72,7 @@ def main():
     pprint(allocation)
 
     output_res = pformat(allocation)
+    print(f"\nWrite output to {str(PATH_OUTPUT.resolve())}\n")
     with PATH_OUTPUT.open("w") as f:
         f.write(output_res)
 

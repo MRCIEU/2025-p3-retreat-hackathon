@@ -159,6 +159,8 @@ Task ideas:
 
 Suggested by: Si
 
+Dataset: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
+
 Task guideline (you don’t need to follow):
 
 - Some exploratory data analysis

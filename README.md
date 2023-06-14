@@ -159,7 +159,9 @@ Task ideas:
 
 Suggested by: Si
 
-Dataset: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
+Source: https://www.kaggle.com/datasets/kamilpytlak/personal-key-indicators-of-heart-disease
+
+Prepared dataset: https://uob.sharepoint.com/:f:/r/teams/grp-ieu-dmer_prog/Shared%20Documents/Social/2023-06-15-prog3-away-day/away-day-hackathon/materials/personal%20key%20indicator%20of%20heart%20disease?csf=1&web=1&e=cEFg4F
 
 Task guideline (you don’t need to follow):
 

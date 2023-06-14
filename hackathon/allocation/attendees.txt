@@ -17,3 +17,4 @@ George
 Huiling
 Zhaozhen
 # NOTE: Ollie not attending the hackathon part
+Lekan

@@ -159,7 +159,10 @@ Task ideas:
 
 Suggested by: Si
 
-Si to add further details
+Task guideline (you don’t need to follow):
+
+- Some exploratory data analysis
+- Some stories to tell from the data
 
 ### 8. Analysis of Air Quality data in Bristol
 

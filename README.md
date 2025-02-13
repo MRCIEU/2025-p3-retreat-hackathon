@@ -5,14 +5,14 @@
 - Session 0, 13:30 - 14:00, 30 mins
   - Intro to the hackathon
   - Random allocation of people to teams and projects
-  - Swap: a person in a team can swap with another person in another team, as long as the two people agree to swap
   - Project to work on
     - We have curated some datasets for teams to work on
     - The team could either work on the allocated dataset, or a backup dataset/project
       - or come up with their own problem / dataset to work on if there is a consensus among team member
+  - Team member and project trading
   - When the teams finish their allocation decisions, Yi will take a record. Yi will then create protected branches in this repo and for people to commit their code to (if they want).
 
-- Session 1, 13:30 - 15:30, 90 mins
+- Session 1, 14:00 - 15:30, 90 mins
 
 - Session 2, 16:00 - 17:30, 90 mins
 

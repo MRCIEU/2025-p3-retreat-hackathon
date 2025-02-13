@@ -12,11 +12,11 @@ attendee_group1:
   - Amanda Chong
   - Andrea Santangelo
   - Olalekan Awoniran
-  - Yi Liu
 
 attendee_group2:
+  - Yi Liu
   - Lavinia Paternoster
-  - Louise Millard
+  # - Louise Millard
   - Josine Min
   - Venexia Walker
   - Tom Gaunt
@@ -31,3 +31,5 @@ projects:
   - proj3
   - proj4
   - proj5
+  - proj6
+  - proj7

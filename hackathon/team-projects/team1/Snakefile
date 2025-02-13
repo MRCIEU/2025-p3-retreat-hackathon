@@ -1,0 +1,18 @@
+#!python
+#!/usr/bin/env python3
+
+rule targets:
+    input:
+       "data/raw"
+
+rule download_data:
+    input: 
+        input_file = "code/s01_download_data.sh"
+        
+    output: 
+        output_file = directory("data/raw")
+
+    shell:"""
+        sh code/s01_download_data.sh
+    """
+

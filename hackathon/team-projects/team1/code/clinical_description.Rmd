@@ -1,0 +1,96 @@
+---
+title: "Descriptive work of clinical data"
+author: "team_1_programme_3"
+date: "2025-02-13"
+output: html_document
+---
+
+## Setting things up
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE, fig.width = 2)
+# Set wd, chnage as needed
+knitr::opts_knit$set(root.dir = "/Users/dj20209/Documents/p3_away_day_25/2025-p3-retreat-hackathon/hackathon/team-projects/team1/")
+
+#load libraries
+library(tidyverse)
+library(gtsummary)
+
+infile = "/Users/dj20209/Documents/p3_away_day_25/2025-p3-retreat-hackathon/hackathon/team-projects/team1/code/clinical_description.Rmd"
+outfile = "/Users/dj20209/Documents/p3_away_day_25/2025-p3-retreat-hackathon/hackathon/team-projects/team1/output/clinical_description.html"
+
+#NOTE: for the sake of saving output to an output folder rather than the code folder, we will be knitting this .Rmd by running the following code:
+# rmarkdown::render(
+#   input = infile,
+#   output_file = outfile,
+#   quiet = TRUE
+# )
+
+```
+
+First we load the data. This was downloaded using the code in (...).sh script.
+
+```{r load}
+pam50     <- read.csv("data/raw/PAM50_proteins.csv")
+clinical  <- read.csv("data/raw/clinical_data_breast_cancer.csv")
+prot      <- read.csv("data/raw/77_cancer_proteomes_CPTAC_itraq.csv")
+```
+
+## Creating a descriptive table 
+
+First we're taking a look at the clinical characteristics underlying the sample.
+
+```{r description-table}
+# Select the most relevant traits so the table is not too long 
+describe_clinical <- clinical %>% 
+  select(
+    c("Complete.TCGA.ID",
+      "Gender",
+      "Age.at.Initial.Pathologic.Diagnosis",
+      "ER.Status",
+      "HER2.Final.Status",
+      "Tumor",
+      "Metastasis.Coded",
+      "Vital.Status",
+      "PAM50.mRNA"
+      )) %>% 
+  mutate( # remove first 4 chars and convert - into .
+    Complete.TCGA.ID = str_replace_all(Complete.TCGA.ID, "-", "."),
+    Complete.TCGA.ID = str_sub(Complete.TCGA.ID, start= 6L, )
+  )
+
+names(describe_clinical) <- c("ID","Gender","Age at Initial Diagnosis","ER Status","HER2 Status","Tumor","Metastasis","Vital Status","PAM50 mRNA grouping")
+
+tbl_clinical <- tbl_summary(describe_clinical[,-1])
+tbl_clinical
+
+```
+
+We might be also interest in seeing how these vars might differ according to the status of the patient at the time the dataset was finalised 
+
+```{r description-table-status}
+
+
+
+# Repeat this but grouping by whether patient was alive or deceased
+tbl_clinical_s <- tbl_summary(describe_clinical[,-1],by = "Vital Status")
+tbl_clinical_s
+
+```
+
+We mainly care about the proteomics so let's keep this short. One thing we noticed is that we have proteomic tumour data for 80 distinct patients, but only we have clinical data on 105 people. We were curious whether there are major differences between those excluded from the proteomics and whether these could be a source of bias.
+
+```{r description-table-exc}
+# extract patient IDs in the proteomic dataset
+prot_IDs <- colnames(prot)[4:86] %>% str_sub(end = 7L)
+
+#create a var in the clinical dataset to indicate whether the patient is in the proteomic dataset
+describe_clinical$Protein <- ifelse(describe_clinical$ID %in% prot_IDs, "Included", "Absent")
+
+tbl_clinical_p <- tbl_summary(describe_clinical[,-1],by = "Protein")
+tbl_clinical_p
+
+```
+We can see that generally there aren't any differences, yay!
+
+More things to be checked if we had more time .....

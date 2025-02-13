@@ -18,7 +18,7 @@ snakemake -c 1
 ```
 
 
-## Data dowmload: Execute this scriop to download the data
+## Data download: Execute this scriop to download the data
 ```bash
 snakemake -c 1 download_data
 ```

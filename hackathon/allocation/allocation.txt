@@ -1,11 +1,22 @@
-[{'proj': ['proj2', 'proj1'],
-  'team': ['Winfred Gatua', 'Haotian Tang', 'Andrew Elmore', 'Tom Gaunt']},
- {'proj': ['proj6', 'proj5'],
-  'team': ['Olalekan Awoniran', 'Si Fang', 'Phoebe Dickson', 'Josine Min']},
- {'proj': ['proj7'],
-  'team': ['Helena Urquijo',
-           'Xuyutian Wang',
-           'Yueying Li',
-           'Lavinia Paternoster']},
- {'proj': ['proj3'], 'team': ['Andrea Santangelo', 'Amanda Chong', 'Yi Liu']},
- {'proj': ['proj4'], 'team': ['Zhaozhen Xu', 'Matt Boyton', 'Venexia Walker']}]
+team1 HealthSphere Initiative: proj4
+- venexia
+- lekan
+- helena
+- phoebe
+- andrea
+
+team2 Public Wellness Coalition: proj6
+- haotian
+- yueying
+- yutian
+- tom
+- winfred
+- yi
+
+team3 Global Health Nexus: proj1
+- amanda
+- zhaozhen
+- lavinia
+- josine
+- matt
+- andrew

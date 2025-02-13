@@ -1,0 +1,10 @@
+name: hackathon_team2
+channels:
+  - conda-forge
+  - r
+  - defaults
+dependencies:
+  - conda-forge::jupyterlab
+  - anaconda::ipykernel
+  - conda-forge::r-tidyverse
+prefix: /Users/qb21134/miniconda3/envs/hackathon_team2

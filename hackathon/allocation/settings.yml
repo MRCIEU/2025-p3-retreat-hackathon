@@ -23,7 +23,7 @@ attendee_group2:
 
 params:
   num_groups: 5
-  seed: 10086
+  seed: 1
 
 projects:
   - proj1

@@ -1,4 +1,4 @@
-# 2025 IEU programme 3 reteat hackathon
+# 2025 IEU programme 3 retreat hackathon
 
 19 people, 5 groups, 4-5 people per group
 
@@ -9,7 +9,7 @@
   - Project to work on
     - We have curated some datasets for teams to work on
     - The team could either work on the allocated dataset, 
-      - or come up with their own problem / dataset to work on if there is a concensus among team member
+      - or come up with their own problem / dataset to work on if there is a consensus among team member
   - When the teams finish their allocation decisions, Yi will take a record. Yi will then create protected branches in this repo and for people to commit their code to (if they want).
 
 - Session 1, 13:30 - 15:30, 90 mins

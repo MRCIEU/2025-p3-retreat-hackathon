@@ -26,8 +26,8 @@ params:
   seed: 10086
 
 projects:
-  - a
-  - b
-  - c
-  - d
-  - e
+  - proj1
+  - proj2
+  - proj3
+  - proj4
+  - proj5

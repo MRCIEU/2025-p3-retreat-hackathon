@@ -1,10 +1,10 @@
 [{'proj': ['proj3'],
-  'team': ['Amanda Chong', 'Andrew Elmore', 'Josine Min', 'Louise Millard']},
+  'team': ['Andrea Santangelo', 'Andrew Elmore', 'Haotian Tang', 'Tom Gaunt']},
  {'proj': ['proj5'],
-  'team': ['Xuyutian Wang', 'Haotian Tang', 'Yi Liu', 'Lavinia Paternoster']},
+  'team': ['Winfred Gatua', 'Matt Boyton', 'Yi Liu', 'Lavinia Paternoster']},
  {'proj': ['proj2'],
-  'team': ['Yueying Li', 'Winfred Gatua', 'Andrea Santangelo', 'Tom Gaunt']},
+  'team': ['Yueying Li', 'Phoebe Dickson', 'Zhaozhen Xu', 'Venexia Walker']},
  {'proj': ['proj1'],
-  'team': ['Si Fang', 'Zhaozhen Xu', 'Matt Boyton', 'Venexia Walker']},
+  'team': ['Xuyutian Wang', 'Si Fang', 'Helena Urquijo', 'Louise Millard']},
  {'proj': ['proj4'],
-  'team': ['Phoebe Dickson', 'Olalekan Awoniran', 'Helena Urquijo']}]
+  'team': ['Amanda Chong', 'Olalekan Awoniran', 'Josine Min']}]

@@ -8,7 +8,7 @@
   - Swap: a person in a team can swap with another person in another team, as long as the two people agree to swap
   - Project to work on
     - We have curated some datasets for teams to work on
-    - The team could either work on the allocated dataset, 
+    - The team could either work on the allocated dataset, or a backup dataset/project
       - or come up with their own problem / dataset to work on if there is a consensus among team member
   - When the teams finish their allocation decisions, Yi will take a record. Yi will then create protected branches in this repo and for people to commit their code to (if they want).
 

@@ -1,0 +1,36 @@
+---
+title: "Solving synthetic heart attacks in South Africa"
+author: "Public Wellness Coalition"
+format: revealjs
+---
+
+## Overview
+
+- Write something about the overview!
+
+## Analysis plan
+
+- Describe methods, add slides as needed
+
+## Prediction modelling results
+
+- Describe results, add slides as needed
+
+## Aetiological analysis results
+
+- Describe results, add slides as needed
+
+## Reproducing our analysis
+
+- Step-by-step guide for someone to reproduce what we have done
+
+
+## Conclusions
+
+- Summarise our findings
+- Describe what we have learnt about reproduciblity
+
+
+
+
+

@@ -9,3 +9,10 @@ We are using a [Kaggle dataset created by AKSHAY CHOUDHARY](https://www.kaggle.c
 ## The approach
 
 Our analysis plan is the product of several minutes of careful discussion with key stakeholders to ensure we are addressing the most critical questions to solve synthetic heart attacks (see docs/analysisplan.md).
+
+**Implementation**
+
+Recreate the conda environment
+
+`conda env create -f hackathon-team2`
+

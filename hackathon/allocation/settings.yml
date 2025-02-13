@@ -1,0 +1,33 @@
+attendee_group1:
+  - Helena Urquijo
+  - Andrew Elmore
+  - Yueying Li
+  - Josine Min
+  - Haotian Tang
+  - Matt Boyton
+  - Zhaozhen Xu
+  - Si Fang
+  - Xuyutian Wang
+  - Winfred Gatua
+  - Phoebe Dickson
+  - Amanda Chong
+  - Andrea Santangelo
+  - Olalekan Awoniran
+  - Yi Liu
+
+attendee_group2:
+  - Lavinia Paternoster
+  - Louise Millard
+  - Venexia Walker
+  - Tom Gaunt
+
+params:
+  num_groups: 5
+  seed: 10086
+
+projects:
+  - a
+  - b
+  - c
+  - d
+  - e

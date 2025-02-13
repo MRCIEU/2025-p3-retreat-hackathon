@@ -1,0 +1,16 @@
+name: team2
+channels:
+  - conda-forge
+dependencies:
+  - altair
+  - jupyterlab
+  - numpy
+  - pandas
+  - py-xgboost-cpu
+  - pydash
+  - python
+  - r-irkernel
+  - r-tidyverse
+  - tqdm
+  - vegafusion>=1.5.0
+  - vegafusion-python-embed>=1.5.0

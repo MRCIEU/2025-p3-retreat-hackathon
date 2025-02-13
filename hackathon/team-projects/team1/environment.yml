@@ -1,0 +1,9 @@
+name: team_1
+channels: 
+  - conda-forge
+  - bioconda
+dependencies:
+  - snakemake=78.28.0
+  - r-base=4.4.2
+  - pip:
+

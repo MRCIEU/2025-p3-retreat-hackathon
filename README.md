@@ -17,10 +17,11 @@
 - Session 2, 16:00 - 17:30, 90 mins
 
 - Presentation, 09:45 - 12:30, 165 mins
-  - 09:45 - 10:15, 30 mins
+  - 09:45 - 10:45, 60 mins
     - People finishing up and prep for presentation
-  - 10:15 - 11:55, 20 (15+5) mins per group * 5 groups =  100 mins
-  - 11:55 - 12:30, 35 mins
+  - 10:45 - 12:00, 25 (15+10) mins per group * 3 groups =  75 mins
+  - 12:00 - 12:30, 30 mins
     - Time buffer
-    - Group discussion on reproducible research
-    - Feedback on away day
+    - Tom on future directions in
+      - programme 3
+      - practice of reproducible research in programme 3

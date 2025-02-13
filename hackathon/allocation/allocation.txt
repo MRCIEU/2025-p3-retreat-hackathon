@@ -1,11 +1,13 @@
-team1 HealthSphere Initiative: proj4
+team1 HealthSphere Initiative
+proj4: Breast Cancer Proteomes
 - venexia
 - lekan
 - helena
 - phoebe
 - andrea
 
-team2 Public Wellness Coalition: proj6
+team2 Public Wellness Coalition
+proj6 Heart Attack in youth vs Adult in South Africa
 - haotian
 - yueying
 - yutian
@@ -13,7 +15,8 @@ team2 Public Wellness Coalition: proj6
 - winfred
 - yi
 
-team3 Global Health Nexus: proj1
+team3 Global Health Nexus
+proj1: IEU GWAS UK Biobank pipeline for diverse populations 
 - amanda
 - zhaozhen
 - lavinia

@@ -1,5 +1,5 @@
 # Install required libraries
-install.packages(c("dplyr", "data.table", "tidyr", "stats"))
+install.packages(c("dplyr", "data.table", "tidyr", "stats"),repos = "http://cran.us.r-project.org")
 
 # Load required libraries
 library(dplyr)
@@ -184,7 +184,7 @@ generate_cluster_summary <- function(protein_levels_cc_numeric_merged, proteincl
 
 # Read in proteomics and clinical datasets 
 protein_levels <- data.table::fread('./data/raw/77_cancer_proteomes_CPTAC_itraq.csv', header = T)
-clinical_dat <- data.table::fread('../data/raw/clinical_data_breast_cancer.csv', header = T)
+clinical_dat <- data.table::fread('./data/raw/clinical_data_breast_cancer.csv', header = T)
 
 # Load protein levels and perform data cleaning
 protein_levels_cc_numeric <- process_protein_data(protein_levels)
@@ -202,4 +202,4 @@ proteincluster_top10_df <- identify_enriched_proteins(protein_levels_cc_numeric,
 cluster_summary_final <- generate_cluster_summary(protein_levels_cc_numeric_merged, proteincluster_top10_df, clinical_dat)
 
 # Write cluster summary to Github output folder
-write.table(cluster_summary_final, '../output/cluster_summary.txt', col.names = T, row.names = F, append = F, sep = '\t')
+write.table(cluster_summary_final, './output/cluster_summary.txt', col.names = T, row.names = F, append = F, sep = '\t')

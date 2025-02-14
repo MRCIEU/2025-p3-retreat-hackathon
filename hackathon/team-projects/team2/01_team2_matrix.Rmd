@@ -1,0 +1,86 @@
+---
+title: "01_team2_matrix"
+author: "Haotian Tang"
+date: "2025-02-14"
+output: html_document
+enviroment: team2_matrix.yaml
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+getwd()
+setwd("/Users/er20212/GitHub/2025-p3-retreat-hackathon/hackathon/team-projects/team2/")
+library(yaml)
+env_config <- yaml.load_file("team2_matrix.yaml")
+
+library(remotes)
+
+# for using the same version
+# for (pkg in names(env_config$Packages)) {
+#   version <- env_config$Packages[[pkg]]$Version
+#   install_version(pkg, version = version)
+# }
+
+```
+
+## R Markdown
+
+```{r cars}
+
+dat = fread("heart_attack_south_africa.csv")
+
+dat <- dat %>%
+  mutate(
+    Gender = recode(Gender, "Male" = "1", "Female" = "2"),
+    Diabetes_Status = recode(Diabetes_Status, "No" = "0", "Yes" = "1"),
+    Family_History_Heart_Disease = recode(Family_History_Heart_Disease, "No" = "0", "Yes" = "1"),
+    Heart_Attack_History = recode(Heart_Attack_History, "No" = "0", "Yes" = "1"),
+    Medication_Usage = recode(Medication_Usage, "No" = "0", "Yes" = "1"),
+    Smoking_Status = recode(Smoking_Status, "No" = "0", "Yes" = "1"),
+    Diet_Quality = recode(Diet_Quality, "Poor" = "1", "Average" = "2", "Good" = "3"),
+    Stress_Level = recode(Stress_Level, "Low" = "1", "Medium" = "2", "High" = "3"),
+    Alcohol_Intake = recode(Alcohol_Intake, "Low" = "1", "Moderate" = "2", "High" = "3"),
+    Physical_Activity = recode(Physical_Activity, "Sedentary" = "1", "Active" = "2", "Highly Active" = "3")
+  ) %>% 
+  mutate(
+    across(
+      c(Gender, Diabetes_Status, Family_History_Heart_Disease, Heart_Attack_History,
+        Medication_Usage, Smoking_Status, Diet_Quality, Stress_Level, Alcohol_Intake,
+        Physical_Activity),
+      as.numeric
+    )
+  )
+dat
+dat = as.data.frame(dat) %>% na.omit()
+colnames(dat) = c("Patient_ID","Age","Gender","Cholesterol",
+                  "SBP","DBP","Smoking","Alcohol",
+                  "Physical","Obesity","Diabetes","Family_HA",
+                  "Diet","Stress","HA_History","Med",
+                  "TG","LDL","HDL","HA")
+
+cor = cor(dat[, !names(dat) %in% "Patient_ID"], use = "complete.obs")
+
+set.seed(20250213)
+
+p <- ggpairs(dat[sample(nrow(dat), 200),!colnames(dat)%in%c("Patient_ID")], diag = list(continuous = wrap("barDiag", bins = 20)),title="Matrix")
+for(i in 1:p$nrow) {
+  for(j in 1:p$ncol) {
+    p[i, j] <- p[i, j] + theme(axis.text.x = element_text(angle = 45, hjust = 1,size = 8),
+                               axis.text.y = element_text(angle = 45, hjust = 1, size = 8))
+  }
+}
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+p
+
+ggsave("matrix.png", p, width = 16, height = 16)
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

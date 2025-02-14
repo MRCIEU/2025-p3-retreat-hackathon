@@ -7,11 +7,12 @@ This respository contains:
 ├── README.md
 ├── Snakefile
 ├── code
-│   ├── 01_download_data.sh
 │   ├── README.md
 │   ├── clinical_description.Rmd
 │   ├── report
-│   └── s01_download_data.sh
+│   ├── s01_download_data.sh
+│   ├── s02_PCA.R
+│   └── s03_data_analysis.R
 ├── data
 │   ├── README.md
 │   └── raw
@@ -21,7 +22,8 @@ This respository contains:
 ├── environment.yml
 ├── output
 │   ├── README.md
-│   └── clinical_description.html
+│   ├── clinical_description.html
+│   └── cluster_summary.txt
 ├── protocol
 │   └── protocol.md
 └── snakemake.md

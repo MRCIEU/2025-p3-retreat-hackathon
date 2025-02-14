@@ -26,9 +26,12 @@ library(remotes)
 ## R Markdown
 
 ```{r cars}
+dat =fread("heart_attack_south_africa.csv")
 
-dat = fread("heart_attack_south_africa.csv")
-
+set.seed(123)
+noise <- rnorm(n=100000, mean = 0, sd = 10) # Random noise
+dat$new_SBP <- 0.8 * dat$Blood_Pressure_Diastolic + noise # SBP depends on DBP + noise
+head(dat)
 dat <- dat %>%
   mutate(
     Gender = recode(Gender, "Male" = "1", "Female" = "2"),
@@ -50,18 +53,24 @@ dat <- dat %>%
       as.numeric
     )
   )
-dat
+head(dat)
 dat = as.data.frame(dat) %>% na.omit()
 colnames(dat) = c("Patient_ID","Age","Gender","Cholesterol",
                   "SBP","DBP","Smoking","Alcohol",
                   "Physical","Obesity","Diabetes","Family_HA",
                   "Diet","Stress","HA_History","Med",
-                  "TG","LDL","HDL","HA")
-
+                  "TG","LDL","HDL","HA","new_SBP")
+ 
 cor = cor(dat[, !names(dat) %in% "Patient_ID"], use = "complete.obs")
+ 
 
+```
+
+## Plots
+
+```{r pressure, echo=FALSE}
 set.seed(20250213)
-
+ 
 p <- ggpairs(dat[sample(nrow(dat), 200),!colnames(dat)%in%c("Patient_ID")], diag = list(continuous = wrap("barDiag", bins = 20)),title="Matrix")
 for(i in 1:p$nrow) {
   for(j in 1:p$ncol) {
@@ -70,14 +79,8 @@ for(i in 1:p$nrow) {
   }
 }
 
-```
-
-## Plots
-
-```{r pressure, echo=FALSE}
 p
-
-# ggsave("matrix.png", p, width = 16, height = 16)
+ggsave("matrix.png", p, width = 16, height = 16)
 
 ```
 

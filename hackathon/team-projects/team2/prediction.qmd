@@ -1,10 +1,11 @@
 ---
-title: "Prediction models"
-author: "Yueying Li"
-date: "13/Feb/2025"
+title: "Solving synthetic heart attacks in South Africa"
+author: "Public Wellness Coalition"
 format: pptx
+date: "13/Feb/2025"
 ---
 
+# Prediction modelling results
 ## preliminary
 - Load in packages
 ```{r}
@@ -20,19 +21,24 @@ raw  <- read_csv("heart_attack_south_africa.csv")
 set.seed(1)
 noise <- rnorm(nrow(raw), mean = 0, sd = 10) # Random noise
 raw$Blood_Pressure_Systolic <- 0.8 * raw$Blood_Pressure_Diastolic + noise # SBP depends on DBP + noise
-glimpse(raw)
+# glimpse(raw)
 ```
+- simulate data
+introduce a correlation between SBP and DBP, so that SBP should not appear as a significant predictor in a Lasso regression.
+set.seed(1)
+noise <- rnorm(nrow(raw), mean = 0, sd = 10) # Random noise
+raw$Blood_Pressure_Systolic <- 0.8 * raw$Blood_Pressure_Diastolic + noise # SBP depends on DBP + noise
 
 ## Subset for modelling
 ```{r}
 d_subset <- raw %>%
     select(-c("Patient_ID")) %>%
     na.omit()
-nrow(d_subset)
-nrow(raw)
+print(paste("There are", nrow(raw), "rows in the original dataset."))
+print(paste("After removing missing values, there are", nrow(d_subset), "rows remaining."))
 ```
 
-- check the distribution of age
+Check the distribution of age in the original dataset and the dataset after removing missing values.
 ```{r}
 d_ns <- bind_rows(
     raw %>% count(Age) %>% mutate(Type = "All"),
@@ -42,7 +48,8 @@ ggplot(d_ns, aes(Age, n, fill = Type)) +
     geom_col(position = position_dodge())
 ```
 
-- Data splitting for training and testing
+## Data splitting for training and testing
+In the youger people, 
 ```{r}
 young <- d_subset %>% filter(Age<55) # 46485
 senior <-  d_subset %>% filter(Age>=55)
@@ -56,28 +63,23 @@ train_idx <- sample(
     size = 0.7*nrow(df), replace = FALSE
 )
 d_train <- df %>% slice(train_idx) # train set, 32539
-nrow(d_train)
+print(paste("There are", nrow(d_train), "participants in the train set."))
 d_test <- df %>% slice(-train_idx) # test set, 13946
-nrow(d_test)
+print(paste("There are", nrow(d_test), "participants in the test set."))
 ```
 
 ## Lasso regression
+- Choose the best lambda using cross-validated Lasso and Ridge regression
 ```{r}
 X <- as.matrix(d_train[,-which(names(d_train) == "Heart_Attack_Outcome")])
 y <- d_train$Heart_Attack_Outcome
-lasso_model <- glmnet(X,y, alpha = 1)
-
-plot(lasso_model)
-```
-
-- choose the best lambda
-```{r}
 set.seed(1) 
 cv_model <- cv.glmnet(X,y, alpha = 1)
 plot(cv_model)
-
+```
+```{r}
 best_lambda <- cv_model$lambda.min
-print(best_lambda)
+print(paste("the best lambda is", best_lambda))
 ```
 
 - use the best lambda to fit the Lasso model
@@ -86,9 +88,7 @@ lasso_best <- glmnet(X, y, alpha = 1, lambda = best_lambda)
 coef(lasso_best)
 ```
 
-# Prediction
-
-## Prediction for the younger group
+## Prediction for the younger group using the model trained on younger individuals
 ```{r}
 predictions <- predict(lasso_best, newx = as.matrix(d_test[,-which(names(d_test) == "Heart_Attack_Outcome")]))
 y_true <- d_test$Heart_Attack_Outcome
@@ -96,11 +96,6 @@ y_true <- d_test$Heart_Attack_Outcome
 y_pred_class <- ifelse(predictions > 0.5, 1, 0)
 accuracy <- sum(y_pred_class == y_true) / length(y_true)
 print(paste("Accuracy:", accuracy))
-```
-
-```{r}
-conf_matrix <- confusionMatrix(factor(y_pred_class), factor(y_true))
-print(conf_matrix)
 ```
 
 ```{r}
@@ -113,7 +108,7 @@ print(paste("AUC:", auc_value))
 plot(roc_obj, main = "ROC Curve")
 ```
 
-## Prediction for the older group
+## Prediction for the older group using the model trained on younger individuals
 ```{r}
 predictions <- predict(lasso_best, newx = as.matrix(senior[,-which(names(senior) %in% c("Heart_Attack_Outcome", "Patient_ID"))]))
 
@@ -124,10 +119,6 @@ accuracy <- sum(y_pred_class == y_true) / length(y_true)
 print(paste("Accuracy:", accuracy))
 ```
 
-```{r}
-conf_matrix <- confusionMatrix(factor(y_pred_class), factor(y_true))
-print(conf_matrix)
-```
 
 ```{r}
 roc_obj <- roc(y_true, as.vector(predictions))

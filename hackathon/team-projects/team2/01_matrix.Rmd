@@ -3,7 +3,7 @@ title: "01_team2_matrix"
 author: "Haotian Tang"
 date: "2025-02-14"
 output: html_document
-enviroment: team2_matrix.yaml
+enviroment: 01_matrix.yaml
 ---
 
 ```{r setup, include=FALSE}
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 getwd()
 setwd("/Users/er20212/GitHub/2025-p3-retreat-hackathon/hackathon/team-projects/team2/")
 library(yaml)
-env_config <- yaml.load_file("team2_matrix.yaml")
+env_config <- yaml.load_file("01_matrix.yaml")
 
 library(remotes)
 
@@ -72,14 +72,12 @@ for(i in 1:p$nrow) {
 
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
+## Plots
 
 ```{r pressure, echo=FALSE}
 p
 
-ggsave("matrix.png", p, width = 16, height = 16)
+# ggsave("matrix.png", p, width = 16, height = 16)
 
 ```
 

@@ -1,0 +1,26 @@
+host: T9922TPW6L
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+clustering        1
+total             1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Feb 14 10:45:26 2025]
+localrule clustering:
+    input: data/raw
+    output: output/cluster_summary.txt
+    jobid: 0
+    reason: Missing output files: output/cluster_summary.txt
+    resources: tmpdir=/var/folders/yr/b1g0zhl91gg99q69m79d2h340000gq/T
+
+[Fri Feb 14 10:46:47 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Complete log: .snakemake/log/2025-02-14T104526.865097.snakemake.log
